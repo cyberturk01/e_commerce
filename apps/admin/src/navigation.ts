@@ -13,6 +13,6 @@ export const navigations: NavigationModel[] = [
   {
     title: 'Products',
     url: '/products',
-    icon: 'box',
+    icon: 'deployed_code',
   },
 ];

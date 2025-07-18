@@ -1,0 +1,58 @@
+<app-blank
+  pageTitle="Products"
+  [breadcrumbs]='[{title:"Products",url:"/products",icon:"deployed_code"}]'
+/>
+<flexi-grid
+  [data]="data()"
+  [showCaption]="true"
+  captionTitle="Product Lists"
+  [showExportExcelBtn]="true"
+>
+  <flexi-grid-column
+    field="imageUrl"
+    title="Image of Product"
+    textAlign="center"
+    width="70px"
+    [filterable]="false"
+  >
+    <ng-template flexiGridCellTemplate let-item>
+      <img
+        [src]="item.imageUrl"
+        width="70"
+        height="70"
+        style="object-fit: contain"
+      />
+    </ng-template>
+  </flexi-grid-column>
+  <flexi-grid-column field="name" title="Product name"></flexi-grid-column>
+  <flexi-grid-column
+    field="price"
+    title="Item price"
+    filterType="number"
+    textAlign="right"
+    format="c"
+    symbol="€"
+  ></flexi-grid-column>
+  <flexi-grid-column
+    field="stock"
+    title="Number of Stock"
+    filterType="number"
+    textAlign="right"
+  ></flexi-grid-column>
+  <ng-template flexiGridColumnCommandTemplate let-item>
+    <flexi-button
+      btnIcon="edit"
+      btnColor="info"
+      title="Edit"
+      flexiTooltip
+      btnSize="small"
+    />
+    <flexi-button
+      btnIcon="delete"
+      btnColor="danger"
+      title="Delete"
+      flexiTooltip
+      btnSize="small"
+    />
+  </ng-template>
+</flexi-grid>
