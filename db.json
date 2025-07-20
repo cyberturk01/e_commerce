@@ -1,3 +1,13 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "12",
+      "imageUrl": "https://images.macrumors.com/article-new/2025/02/iphone-17-pro-asherdipps.jpg",
+      "name": "Iphone 17",
+      "price": 1200,
+      "stock": 23,
+      "categoryId": "332",
+      "categoryName": "Phone"
+    }
+  ]
 }

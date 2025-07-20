@@ -4,9 +4,11 @@
 />
 <flexi-grid
   [data]="data()"
+  [loading]="loading()"
   [showCaption]="true"
   captionTitle="Product Lists"
   [showExportExcelBtn]="true"
+  (onRefresh)="result.reload()"
 >
   <flexi-grid-column
     field="imageUrl"
@@ -25,6 +27,12 @@
     </ng-template>
   </flexi-grid-column>
   <flexi-grid-column field="name" title="Product name"></flexi-grid-column>
+  <flexi-grid-column
+    field="categoryName"
+    title="Category Name"
+    filterType="select"
+    [filterData]="categoryFilter()"
+  ></flexi-grid-column>
   <flexi-grid-column
     field="price"
     title="Item price"
