@@ -13,8 +13,10 @@ export interface ProductModel {
   id?: string;
   name: string;
   imageUrl: string;
-  price: string;
-  stock: string;
+  price: number;
+  stock: number;
+  categoryId: string;
+  categoryName: string;
 }
 @Component({
   imports: [Blank, FlexiGridModule],
@@ -29,8 +31,10 @@ export default class Products {
       imageUrl:
         'https://images.macrumors.com/article-new/2025/02/iphone-17-pro-asherdipps.jpg',
       name: 'Iphone 17',
-      price: '1200',
-      stock: '23',
+      price: 1200,
+      stock: 23,
+      categoryId: '',
+      categoryName: 'Phone',
     },
   ]);
 }
