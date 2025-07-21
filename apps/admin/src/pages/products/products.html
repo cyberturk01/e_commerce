@@ -4,10 +4,21 @@
 />
 <flexi-grid
   [data]="data()"
+  [loading]="loading()"
   [showCaption]="true"
   captionTitle="Product Lists"
   [showExportExcelBtn]="true"
+  (onRefresh)="result.reload()"
 >
+  <ng-template flexiGridCaptionCommandTemplate>
+    <flexi-button
+      routerLink="/products/create"
+      btnIcon="add"
+      btnColor="primary"
+      title="Add Product"
+      flexiTooltip
+    ></flexi-button>
+  </ng-template>
   <flexi-grid-column
     field="imageUrl"
     title="Image of Product"
@@ -26,6 +37,12 @@
   </flexi-grid-column>
   <flexi-grid-column field="name" title="Product name"></flexi-grid-column>
   <flexi-grid-column
+    field="categoryName"
+    title="Category Name"
+    filterType="select"
+    [filterData]="categoryFilter()"
+  ></flexi-grid-column>
+  <flexi-grid-column
     field="price"
     title="Item price"
     filterType="number"
@@ -41,6 +58,7 @@
   ></flexi-grid-column>
   <ng-template flexiGridColumnCommandTemplate let-item>
     <flexi-button
+      routerLink="/products/edit/{{item.id}}"
       btnIcon="edit"
       btnColor="info"
       title="Edit"
@@ -48,6 +66,7 @@
       btnSize="small"
     />
     <flexi-button
+      (click)="delete(item.id)"
       btnIcon="delete"
       btnColor="danger"
       title="Delete"
