@@ -15,15 +15,11 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'products',
-        loadComponent: () => import('./pages/products/products'),
+        loadChildren: () => import('./pages/products/routes'),
       },
       {
-        path: 'products/create',
-        loadComponent: () => import('./pages/products/create/create'),
-      },
-      {
-        path: 'products/edit/:id',
-        loadComponent: () => import('./pages/products/create/create'),
+        path: 'category',
+        loadComponent: () => import('./pages/category/category'),
       },
     ],
   },
