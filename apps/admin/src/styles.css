@@ -1,3 +1,4 @@
+@import url('node_modules/flexi-toast/src/flexi-toast.css');
 :root {
   --primary-color: #4361ee;
 
@@ -3639,4 +3640,12 @@ body.login-page::before {
     width: 36px;
     height: 36px;
   }
+}
+
+.form-control,
+.form-select {
+  background-color: white !important;
+}
+.sidebar-search-input {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
