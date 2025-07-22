@@ -1,0 +1,36 @@
+<app-blank
+  pageTitle="Add Products"
+  [breadcrumbs]='[{title:"Category",url:"/category",icon:"category_search"},
+                {title:cardTitle(), url:"/category/create",icon:cardIcon()}]'
+/>
+<div class="row">
+  <div class="col-md-4 col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-header">
+          <h4>{{cardTitle()}}</h4>
+        </div>
+        <div class="card-body">
+          <form #form="ngForm" autocomplete="off" (ngSubmit)="save(form)">
+            <div class="form-group mt-2">
+              <label for="">Category name</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="data().name"
+                [ngModel]="_common.dataOnNameChange()?.name || ''"
+                (ngModelChange)="onInputChange($event)"
+                name="name"
+              />
+            </div>
+            <div class="form-group mt-2 d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary">
+                {{btnName()}}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

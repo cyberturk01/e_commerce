@@ -15,7 +15,7 @@ import { FlexiToastService } from 'flexi-toast';
 import { NgxMaskDirective, NgxMaskPipe, NgxMaskService } from 'ngx-mask';
 import { NgxMaskApplierService } from 'node_modules/ngx-mask/lib/ngx-mask-applier.service';
 export interface ProductModel {
-  id: string;
+  id?: string;
   name: string;
   imageUrl: string;
   price: number;
@@ -24,7 +24,6 @@ export interface ProductModel {
   categoryName: string;
 }
 export const initialProduct: ProductModel = {
-  id: '',
   name: '',
   imageUrl: '',
   price: 0,

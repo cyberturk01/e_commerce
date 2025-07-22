@@ -23,6 +23,8 @@
                 type="text"
                 class="form-control"
                 [(ngModel)]="data().name"
+                [ngModel]="_common.dataOnNameChange()?.name || ''"
+                (ngModelChange)="onInputChange($event)"
                 name="name"
               />
             </div>
