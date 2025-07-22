@@ -17,6 +17,7 @@ import { FlexiToastService } from 'flexi-toast';
 import { NgxMaskDirective } from 'ngx-mask';
 import { lastValueFrom } from 'rxjs';
 import { initialProduct, ProductModel } from '../products';
+import { Common } from 'apps/admin/src/services/common';
 
 @Component({
   imports: [Blank, FlexiGridModule, FormsModule, NgxMaskDirective],
@@ -39,7 +40,9 @@ export default class Create {
       return res;
     },
   });
-  readonly data = linkedSignal(() => this.result.value() ?? initialProduct);
+  readonly data = linkedSignal(
+    () => this.result.value() ?? { ...initialProduct }
+  );
   readonly cardTitle = computed(() => (this.id() ? 'Edit Item' : 'Add Item'));
   readonly cardIcon = computed(() => (this.id() ? 'edit' : 'add'));
   readonly btnName = computed(() => (this.id() ? 'Update' : 'Save'));
@@ -53,8 +56,18 @@ export default class Create {
       }
     });
   }
+  readonly _common = inject(Common);
+
+  onInputChange(value: string) {
+    this._common.onNameChange(value);
+  }
 
   save(form: NgForm) {
+    const data = this._common.dataOnNameChange();
+    if (data) {
+      console.log('Saved:', data);
+      this._common.resetNameChange();
+    }
     if (!form.valid) {
       return;
     }

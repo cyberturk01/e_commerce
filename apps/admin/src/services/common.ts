@@ -31,4 +31,8 @@ export class Common {
       name: formatted,
     });
   }
+
+  resetNameChange() {
+    this.dataOnNameChange.set(undefined);
+  }
 }

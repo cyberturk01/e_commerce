@@ -28,11 +28,20 @@
       "categoryName": "Phone"
     },
     {
-      "id": "",
-      "name": "kalem",
-      "imageUrl": "https://www.nezih.com.tr/faber-kursun-kalem-candy-silgili-112802-132988-10-B.jpg",
-      "price": 102,
-      "stock": "012",
+      "id": "13e7",
+      "name": "Kalem",
+      "imageUrl": "https://www.pngfind.com/pngs/m/80-809240_emoji-car-auto-automobile-vechicle-bus-red-redcar.png",
+      "price": 123,
+      "stock": "12",
+      "categoryId": "",
+      "categoryName": ""
+    },
+    {
+      "id": "f812",
+      "name": "Kalem2",
+      "imageUrl": "https://cdnsta.avansas.com/mnresize/900/-/urun/94691/f-c-tukenmez-kalem-10lu-poset-zoom-1.jpg",
+      "price": 1231231,
+      "stock": "234",
       "categoryId": "",
       "categoryName": ""
     }
@@ -45,18 +54,6 @@
     {
       "id": "cbed",
       "name": "Car"
-    },
-    {
-      "id": "bafd",
-      "name": "Spielzeug"
-    },
-    {
-      "id": "cab6",
-      "name": "Mouse"
-    },
-    {
-      "id": "a4b9",
-      "name": "Asd"
     }
   ]
 }

@@ -56,9 +56,7 @@ export default class Create {
   );
   readonly cardIcon = computed(() => (this.id() ? 'edit' : 'add'));
   readonly btnName = computed(() => (this.id() ? 'Update' : 'Save'));
-  readonly data = linkedSignal(
-    () => this.result.value() ?? { ...initialCategory }
-  );
+  readonly data = computed(() => this.result.value() ?? { ...initialCategory });
 
   readonly _common = inject(Common);
 
@@ -67,6 +65,11 @@ export default class Create {
   }
 
   save(form: NgForm) {
+    const data = this._common.dataOnNameChange();
+    if (data) {
+      console.log('Saved:', data);
+      this._common.resetNameChange();
+    }
     console.log('ID:' + this.id());
     if (!form.valid) {
       return;
