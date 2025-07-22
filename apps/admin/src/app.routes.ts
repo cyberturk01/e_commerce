@@ -21,6 +21,10 @@ export const appRoutes: Route[] = [
         path: 'category',
         loadChildren: () => import('./pages/category/categoryRoutes'),
       },
+      {
+        path: 'users',
+        loadComponent: () => import('./pages/users/users'),
+      },
     ],
   },
 ];

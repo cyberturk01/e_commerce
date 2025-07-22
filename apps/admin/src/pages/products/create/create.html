@@ -18,6 +18,19 @@
             (ngSubmit)="save(form)"
           >
             <div class="form-group">
+              <label for="">Category</label>
+              <flexi-select
+                [data]="categories()"
+                label="name"
+                value="id"
+                [(ngModel)]="data().categoryId"
+                name="categoryId"
+                [required]="true"
+                [loading]="categoryLoading()"
+                (ngModelChange)="setCategoryName()"
+              ></flexi-select>
+            </div>
+            <div class="form-group mt-2">
               <label for="">Product Name</label>
               <input
                 type="text"

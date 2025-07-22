@@ -12,8 +12,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { FlexiGridFilterDataModel, FlexiGridModule } from 'flexi-grid';
 import { HttpClient, httpResource } from '@angular/common/http';
 import { FlexiToastService } from 'flexi-toast';
-import { NgxMaskDirective, NgxMaskPipe, NgxMaskService } from 'ngx-mask';
-import { NgxMaskApplierService } from 'node_modules/ngx-mask/lib/ngx-mask-applier.service';
+import { FlexiSelectModule } from 'flexi-select';
+import { CategoryModel } from '../category/category';
 export interface ProductModel {
   id?: string;
   name: string;
@@ -38,19 +38,21 @@ export const initialProduct: ProductModel = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Products {
-  readonly result = httpResource<ProductModel[]>(
-    () => 'http://localhost:3000/products'
-  );
+  readonly result = httpResource<ProductModel[]>(() => 'api/products');
   readonly _common = inject(Common);
   readonly data = computed(() => this.result.value() ?? []);
   readonly loading = computed(() => this.result.isLoading());
 
-  readonly categoryFilter = signal<FlexiGridFilterDataModel[]>([
-    {
-      name: 'Phone',
-      value: 'phone',
-    },
-  ]);
+  readonly categoryResult = httpResource<CategoryModel[]>(() => 'api/category');
+
+  readonly categoryFilter = computed<FlexiGridFilterDataModel[]>(() => {
+    const categories = this.categoryResult.value() ?? [];
+    const filters = categories.map<FlexiGridFilterDataModel>((val) => ({
+      name: val.name,
+      value: val.name,
+    }));
+    return filters;
+  });
   readonly #toast = inject(FlexiToastService);
   readonly #http = inject(HttpClient);
   delete(id: string) {
@@ -59,11 +61,9 @@ export default class Products {
       'Do you want to delete the item? ' + id,
       'Delete',
       () => {
-        this.#http
-          .delete('http://localhost:3000/products/' + id)
-          .subscribe((res) => {
-            this.result.reload();
-          });
+        this.#http.delete('api/products/' + id).subscribe((res) => {
+          this.result.reload();
+        });
       },
       'Cancel'
     );

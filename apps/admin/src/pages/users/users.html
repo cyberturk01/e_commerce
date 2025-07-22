@@ -1,0 +1,59 @@
+<app-blank
+  pageTitle="Users"
+  [breadcrumbs]='[{title:"Users",url:"/users",icon:"group"}]'
+/>
+<flexi-grid
+  [data]="data()"
+  [loading]="loading()"
+  [showCaption]="true"
+  captionTitle="User Lists"
+  [showExportExcelBtn]="true"
+  (onRefresh)="result.reload()"
+>
+  <ng-template flexiGridCaptionCommandTemplate>
+    <flexi-button
+      routerLink="/users/create/"
+      btnIcon="Add"
+      btnColor="primary"
+      title="Add User"
+      flexiTooltip
+    />
+  </ng-template>
+  <flexi-grid-column field="firstName" title="First Name" textAlign="center" />
+  <flexi-grid-column field="lastName" title="Last Name" textAlign="center" />
+  <flexi-grid-column field="fulName" title="Full Name" textAlign="center" />
+  <flexi-grid-column field="userName" title="User Name" textAlign="center" />
+  <flexi-grid-column field="email" title="Email Address" textAlign="center" />
+  <flexi-grid-column
+    field="isAdmin"
+    title="Is Admin"
+    textAlign="center"
+    filterType="boolean"
+    [booleanData]="['Admin' , 'Not Admin']"
+  >
+    <ng-template flexiGridCellTemplate let-item>
+      <input
+        type="checkbox"
+        [checked]="item.isAdmin"
+        class="form-control"
+        [name]="item.id"
+      />
+    </ng-template>
+  </flexi-grid-column>
+  <ng-template flexiGridCaptionCommandTemplate let-item>
+    <flexi-button
+      routerLink="users/edit/{{item.id}}"
+      btnIcon="edit"
+      btnColor="info"
+      title="Edit User"
+      flexiTooltip
+    />
+    <flexi-button
+      (click)="delete(item.id)"
+      btnIcon="Delete"
+      btnColor="danger"
+      title="Delete User"
+      flexiTooltip
+    />
+  </ng-template>
+</flexi-grid>
