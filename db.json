@@ -5,23 +5,58 @@
       "imageUrl": "https://www.lite-magazin.de/wp-content/uploads/2025/06/250623.AppleiPhone.jpg",
       "name": "Iphone 17",
       "price": 1200,
-      "stock": 23,
-      "categoryId": "332",
+      "stock": "23k",
+      "categoryId": "3321",
       "categoryName": "Phone"
     },
     {
       "id": "48b0",
-      "name": "araba2",
+      "name": "Araba",
       "imageUrl": "https://blogistic.net/wp-content/uploads/2023/06/Togg-T10X-rot.webp",
       "price": 123421.09,
-      "stock": "123"
+      "stock": "123",
+      "categoryId": "3323",
+      "categoryName": "CellPhone"
     },
     {
       "id": "1e8c",
       "name": "Baby Car",
       "imageUrl": "https://cdn.akakce.com/z/baby-toys/baby-toys-samy-sirin-araba.jpg",
       "price": 132.23,
-      "stock": "2132"
+      "stock": "2132",
+      "categoryId": "3324",
+      "categoryName": "Phone"
+    },
+    {
+      "id": "",
+      "name": "kalem",
+      "imageUrl": "https://www.nezih.com.tr/faber-kursun-kalem-candy-silgili-112802-132988-10-B.jpg",
+      "price": 102,
+      "stock": "012",
+      "categoryId": "",
+      "categoryName": ""
+    }
+  ],
+  "category": [
+    {
+      "id": "3aee",
+      "name": "Phone"
+    },
+    {
+      "id": "cbed",
+      "name": "Car"
+    },
+    {
+      "id": "bafd",
+      "name": "Spielzeug"
+    },
+    {
+      "id": "cab6",
+      "name": "Mouse"
+    },
+    {
+      "id": "a4b9",
+      "name": "Asd"
     }
   ]
 }

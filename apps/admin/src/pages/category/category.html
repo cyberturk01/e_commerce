@@ -2,3 +2,45 @@
   pageTitle="Category"
   [breadcrumbs]='[{title:"Category",url:"/category",icon:"category_search"}]'
 />
+<flexi-grid
+  [data]="data()"
+  [loading]="loading()"
+  [showCaption]="true"
+  captionTitle="Category Lists"
+  [showExportExcelBtn]="true"
+  (onRefresh)="result.reload()"
+>
+  <ng-template flexiGridCaptionCommandTemplate>
+    <flexi-button
+      routerLink="/category/create"
+      btnIcon="add"
+      btnColor="primary"
+      title="Add Category"
+      flexiTooltip
+    ></flexi-button>
+  </ng-template>
+
+  <flexi-grid-column
+    field="name"
+    title="Category Name"
+    filterType="text"
+  ></flexi-grid-column>
+  <ng-template flexiGridColumnCommandTemplate let-item>
+    <flexi-button
+      routerLink="/category/edit/{{item.id}}"
+      btnIcon="edit"
+      btnColor="info"
+      title="Edit Category"
+      flexiTooltip
+      btnSize="small"
+    />
+    <flexi-button
+      (click)="delete(item.id)"
+      btnIcon="delete"
+      btnColor="danger"
+      title="Delete"
+      flexiTooltip
+      btnSize="small"
+    />
+  </ng-template>
+</flexi-grid>

@@ -1,4 +1,4 @@
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -9,22 +9,24 @@ import {
   signal,
   ViewEncapsulation,
 } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Blank from 'apps/admin/src/component/blank/blank';
-import { FlexiGridModule } from 'flexi-grid';
 import { FlexiToastService } from 'flexi-toast';
-import { NgxMaskDirective } from 'ngx-mask';
 import { lastValueFrom } from 'rxjs';
-import { initialProduct, ProductModel } from '../products';
+import { CategoryModel, initialCategory } from '../category';
+import { FormsModule, NgForm } from '@angular/forms';
+import { FlexiGridModule } from 'flexi-grid';
+import { NgxMaskDirective } from 'ngx-mask';
+import { Common } from 'apps/admin/src/services/common';
 
 @Component({
-  imports: [Blank, FlexiGridModule, FormsModule, NgxMaskDirective],
+  imports: [Blank, FlexiGridModule, FormsModule],
   templateUrl: './create.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Create {
+  [x: string]: any;
   readonly #http = inject(HttpClient);
   readonly #router = inject(Router);
   readonly #toast = inject(FlexiToastService);
@@ -32,18 +34,13 @@ export default class Create {
     params: () => this.id(),
     loader: async () => {
       var res = await lastValueFrom(
-        this.#http.get<ProductModel>(
-          'http://localhost:3000/products/' + this.id()
+        this.#http.get<CategoryModel>(
+          'http://localhost:3000/category/' + this.id()
         )
       );
       return res;
     },
   });
-  readonly data = linkedSignal(() => this.result.value() ?? initialProduct);
-  readonly cardTitle = computed(() => (this.id() ? 'Edit Item' : 'Add Item'));
-  readonly cardIcon = computed(() => (this.id() ? 'edit' : 'add'));
-  readonly btnName = computed(() => (this.id() ? 'Update' : 'Save'));
-  readonly id = signal<string | undefined>(undefined);
   readonly activate = inject(ActivatedRoute);
 
   constructor() {
@@ -53,31 +50,47 @@ export default class Create {
       }
     });
   }
+  readonly id = signal<string | undefined>(undefined);
+  readonly cardTitle = computed(() =>
+    this.id() ? 'Edit Category' : 'Add Category'
+  );
+  readonly cardIcon = computed(() => (this.id() ? 'edit' : 'add'));
+  readonly btnName = computed(() => (this.id() ? 'Update' : 'Save'));
+  readonly data = linkedSignal(
+    () => this.result.value() ?? { ...initialCategory }
+  );
+
+  readonly _common = inject(Common);
+
+  onInputChange(value: string) {
+    this._common.onNameChange(value);
+  }
 
   save(form: NgForm) {
+    console.log('ID:' + this.id());
     if (!form.valid) {
       return;
     }
     console.log(form.value);
     if (!this.id()) {
       this.#http
-        .post('http://localhost:3000/products', this.data())
+        .post('http://localhost:3000/category', this.data())
         .subscribe(() => {
-          this.#router.navigateByUrl('/products');
+          this.#router.navigateByUrl('/category');
           this.#toast.showToast(
             'Successful',
-            'Product successfully added',
+            'Category successfully added',
             'success'
           );
         });
     } else {
       this.#http
-        .put('http://localhost:3000/products/' + this.id(), this.data())
+        .put('http://localhost:3000/category/' + this.id(), this.data())
         .subscribe(() => {
-          this.#router.navigateByUrl('/products');
+          this.#router.navigateByUrl('/category');
           this.#toast.showToast(
             'Successful',
-            'Product successfully editted',
+            'Category successfully editted',
             'info'
           );
         });
