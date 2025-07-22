@@ -1,4 +1,4 @@
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpRequest, httpResource } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -18,9 +18,17 @@ import { NgxMaskDirective } from 'ngx-mask';
 import { lastValueFrom } from 'rxjs';
 import { initialProduct, ProductModel } from '../products';
 import { Common } from 'apps/admin/src/services/common';
+import { FlexiSelectModule } from 'flexi-select';
+import { CategoryModel } from '../../category/category';
 
 @Component({
-  imports: [Blank, FlexiGridModule, FormsModule, NgxMaskDirective],
+  imports: [
+    Blank,
+    FlexiGridModule,
+    FormsModule,
+    NgxMaskDirective,
+    FlexiSelectModule,
+  ],
   templateUrl: './create.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -33,9 +41,7 @@ export default class Create {
     params: () => this.id(),
     loader: async () => {
       var res = await lastValueFrom(
-        this.#http.get<ProductModel>(
-          'http://localhost:3000/products/' + this.id()
-        )
+        this.#http.get<ProductModel>('api/products/' + this.id())
       );
       return res;
     },
@@ -48,6 +54,10 @@ export default class Create {
   readonly btnName = computed(() => (this.id() ? 'Update' : 'Save'));
   readonly id = signal<string | undefined>(undefined);
   readonly activate = inject(ActivatedRoute);
+
+  readonly categoryResult = httpResource<CategoryModel[]>(() => 'api/category');
+  readonly categories = computed(() => this.categoryResult.value() ?? []);
+  readonly categoryLoading = computed(() => this.categoryResult.isLoading());
 
   constructor() {
     this.activate.params.subscribe((res) => {
@@ -73,27 +83,31 @@ export default class Create {
     }
     console.log(form.value);
     if (!this.id()) {
-      this.#http
-        .post('http://localhost:3000/products', this.data())
-        .subscribe(() => {
-          this.#router.navigateByUrl('/products');
-          this.#toast.showToast(
-            'Successful',
-            'Product successfully added',
-            'success'
-          );
-        });
+      this.#http.post('api/products', this.data()).subscribe(() => {
+        this.#router.navigateByUrl('/products');
+        this.#toast.showToast(
+          'Successful',
+          'Product successfully added',
+          'success'
+        );
+      });
     } else {
-      this.#http
-        .put('http://localhost:3000/products/' + this.id(), this.data())
-        .subscribe(() => {
-          this.#router.navigateByUrl('/products');
-          this.#toast.showToast(
-            'Successful',
-            'Product successfully editted',
-            'info'
-          );
-        });
+      this.#http.put('api/products/' + this.id(), this.data()).subscribe(() => {
+        this.#router.navigateByUrl('/products');
+        this.#toast.showToast(
+          'Successful',
+          'Product successfully editted',
+          'info'
+        );
+      });
     }
+  }
+  setCategoryName() {
+    const id = this.data().categoryId;
+    const category = this.categories().find((s) => (s.id = id));
+    this.data.update((prev) => ({
+      ...prev,
+      categoryName: category?.name ?? '',
+    }));
   }
 }

@@ -26,9 +26,7 @@ export const initialCategory: CategoryModel = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Category {
-  readonly result = httpResource<CategoryModel[]>(
-    () => 'http://localhost:3000/category'
-  );
+  readonly result = httpResource<CategoryModel[]>(() => 'api/category');
   readonly _common = inject(Common);
   readonly data = computed(() => this.result.value() ?? []);
   readonly loading = computed(() => this.result.isLoading());
@@ -41,11 +39,9 @@ export default class Category {
       'Do you want to delete the item? ' + id,
       'Delete',
       () => {
-        this.#http
-          .delete('http://localhost:3000/category/' + id)
-          .subscribe((res) => {
-            this.result.reload();
-          });
+        this.#http.delete('api/category/' + id).subscribe((res) => {
+          this.result.reload();
+        });
       },
       'Cancel'
     );

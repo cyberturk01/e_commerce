@@ -26,7 +26,6 @@ import { Common } from 'apps/admin/src/services/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Create {
-  [x: string]: any;
   readonly #http = inject(HttpClient);
   readonly #router = inject(Router);
   readonly #toast = inject(FlexiToastService);
@@ -34,9 +33,7 @@ export default class Create {
     params: () => this.id(),
     loader: async () => {
       var res = await lastValueFrom(
-        this.#http.get<CategoryModel>(
-          'http://localhost:3000/category/' + this.id()
-        )
+        this.#http.get<CategoryModel>('api/category/' + this.id())
       );
       return res;
     },
@@ -76,27 +73,23 @@ export default class Create {
     }
     console.log(form.value);
     if (!this.id()) {
-      this.#http
-        .post('http://localhost:3000/category', this.data())
-        .subscribe(() => {
-          this.#router.navigateByUrl('/category');
-          this.#toast.showToast(
-            'Successful',
-            'Category successfully added',
-            'success'
-          );
-        });
+      this.#http.post('api/category', this.data()).subscribe(() => {
+        this.#router.navigateByUrl('/category');
+        this.#toast.showToast(
+          'Successful',
+          'Category successfully added',
+          'success'
+        );
+      });
     } else {
-      this.#http
-        .put('http://localhost:3000/category/' + this.id(), this.data())
-        .subscribe(() => {
-          this.#router.navigateByUrl('/category');
-          this.#toast.showToast(
-            'Successful',
-            'Category successfully editted',
-            'info'
-          );
-        });
+      this.#http.put('api/category/' + this.id(), this.data()).subscribe(() => {
+        this.#router.navigateByUrl('/category');
+        this.#toast.showToast(
+          'Successful',
+          'Category successfully editted',
+          'info'
+        );
+      });
     }
   }
 }

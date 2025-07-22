@@ -5,26 +5,26 @@
       "imageUrl": "https://www.lite-magazin.de/wp-content/uploads/2025/06/250623.AppleiPhone.jpg",
       "name": "Iphone 17",
       "price": 1200,
-      "stock": "23k",
-      "categoryId": "3321",
+      "stock": "2213",
+      "categoryId": "3aee",
       "categoryName": "Phone"
     },
     {
       "id": "48b0",
-      "name": "Araba",
+      "name": "Iphone",
       "imageUrl": "https://blogistic.net/wp-content/uploads/2023/06/Togg-T10X-rot.webp",
       "price": 123421.09,
       "stock": "123",
-      "categoryId": "3323",
-      "categoryName": "CellPhone"
+      "categoryId": "3aee",
+      "categoryName": "Phone"
     },
     {
       "id": "1e8c",
-      "name": "Baby Car",
+      "name": "Baby Car Phone",
       "imageUrl": "https://cdn.akakce.com/z/baby-toys/baby-toys-samy-sirin-araba.jpg",
       "price": 132.23,
       "stock": "2132",
-      "categoryId": "3324",
+      "categoryId": "3aee",
       "categoryName": "Phone"
     },
     {
@@ -33,8 +33,8 @@
       "imageUrl": "https://www.pngfind.com/pngs/m/80-809240_emoji-car-auto-automobile-vechicle-bus-red-redcar.png",
       "price": 123,
       "stock": "12",
-      "categoryId": "",
-      "categoryName": ""
+      "categoryId": "525c",
+      "categoryName": "Pen"
     },
     {
       "id": "f812",
@@ -42,8 +42,8 @@
       "imageUrl": "https://cdnsta.avansas.com/mnresize/900/-/urun/94691/f-c-tukenmez-kalem-10lu-poset-zoom-1.jpg",
       "price": 1231231,
       "stock": "234",
-      "categoryId": "",
-      "categoryName": ""
+      "categoryId": "525c",
+      "categoryName": "Pen"
     }
   ],
   "category": [
@@ -54,6 +54,11 @@
     {
       "id": "cbed",
       "name": "Car"
+    },
+    {
+      "id": "525c",
+      "name": "Pen"
     }
-  ]
+  ],
+  "users": []
 }
