@@ -21,7 +21,7 @@
   </ng-template>
   <flexi-grid-column field="firstName" title="First Name" textAlign="center" />
   <flexi-grid-column field="lastName" title="Last Name" textAlign="center" />
-  <flexi-grid-column field="fulName" title="Full Name" textAlign="center" />
+  <flexi-grid-column field="fullName" title="Full Name" textAlign="center" />
   <flexi-grid-column field="userName" title="User Name" textAlign="center" />
   <flexi-grid-column field="email" title="Email Address" textAlign="center" />
   <flexi-grid-column
@@ -32,28 +32,34 @@
     [booleanData]="['Admin' , 'Not Admin']"
   >
     <ng-template flexiGridCellTemplate let-item>
-      <input
-        type="checkbox"
-        [checked]="item.isAdmin"
-        class="form-control"
-        [name]="item.id"
-      />
+      <div class="form-check form-switch d-flex justify-content-center">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          [id]="item.id"
+          [checked]="item.isAdmin"
+        />
+      </div>
     </ng-template>
   </flexi-grid-column>
-  <ng-template flexiGridCaptionCommandTemplate let-item>
+
+  <ng-template flexiGridColumnCommandTemplate let-item>
     <flexi-button
-      routerLink="users/edit/{{item.id}}"
+      routerLink="/users/edit/{{item.id}}"
       btnIcon="edit"
       btnColor="info"
-      title="Edit User"
+      title="Edit"
       flexiTooltip
+      btnSize="small"
     />
     <flexi-button
       (click)="delete(item.id)"
-      btnIcon="Delete"
+      btnIcon="delete"
       btnColor="danger"
-      title="Delete User"
+      title="Delete"
       flexiTooltip
+      btnSize="small"
     />
   </ng-template>
 </flexi-grid>

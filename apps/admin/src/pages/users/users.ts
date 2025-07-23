@@ -20,7 +20,7 @@ export interface UserModel {
   userName: string;
   email: string;
   password: string;
-  isActive: boolean;
+  isAdmin: boolean;
 }
 
 export const initialUser: UserModel = {
@@ -29,10 +29,8 @@ export const initialUser: UserModel = {
   userName: '',
   email: '',
   password: '',
-  isActive: false,
-  get fullName(): string {
-    return `${this.firstName} ${this.lastName} `;
-  },
+  isAdmin: false,
+  fullName: '',
 };
 @Component({
   imports: [Blank, FlexiGridModule, RouterLink, FormsModule],
