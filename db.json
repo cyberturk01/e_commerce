@@ -60,5 +60,16 @@
       "name": "Pen"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "id": "680c",
+      "firstName": "Gökhan",
+      "lastName": "Yigit",
+      "userName": "Cyberturk01",
+      "email": "yigitgokhan1@gmail.com",
+      "password": "123123",
+      "isActive": false,
+      "fullName": "Gökhan Yigit"
+    }
+  ]
 }

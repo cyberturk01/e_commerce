@@ -23,7 +23,7 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'users',
-        loadComponent: () => import('./pages/users/users'),
+        loadChildren: () => import('./pages/users/routes'),
       },
     ],
   },
