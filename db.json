@@ -63,13 +63,13 @@
   "users": [
     {
       "id": "95f9",
-      "firstName": "Gökhan2",
+      "firstName": "Gökhan",
       "lastName": "Yigit",
       "userName": "cyber",
       "email": "yigitgokhan1@gmail.com",
       "password": "123",
       "isAdmin": true,
-      "fullName": "Gökhan2 Yigit"
+      "fullName": "Gökhan Yigit"
     },
     {
       "id": "c380",
