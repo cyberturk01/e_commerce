@@ -38,6 +38,10 @@ export default class Login {
               'Username or Password is not exist or wrong',
               'error'
             );
+            return;
+          } else if (!res[0].isAdmin) {
+            this.#toast.showToast('Error', 'User is not authorized', 'error');
+            return;
           } else {
             console.log(res[0]);
 

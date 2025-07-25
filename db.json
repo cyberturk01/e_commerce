@@ -78,7 +78,7 @@
       "userName": "Cyberturk01",
       "email": "yigitgokhan1@gmail.com",
       "password": "123123",
-      "isAdmin": true,
+      "isAdmin": false,
       "fullName": "Gökhan Yigit"
     }
   ]
