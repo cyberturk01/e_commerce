@@ -59,4 +59,9 @@ export default class Users {
       'Cancel'
     );
   }
+  changeIsAdmin(data: UserModel) {
+    this.#http.put('api/users/' + data.id, data).subscribe(() => {
+      this.result.reload();
+    });
+  }
 }

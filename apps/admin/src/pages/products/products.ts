@@ -41,7 +41,9 @@ export default class Products {
   readonly result = httpResource<ProductModel[]>(() => 'api/products');
   readonly _common = inject(Common);
   readonly data = computed(() => this.result.value() ?? []);
-  readonly loading = computed(() => this.result.isLoading());
+  readonly loading = computed(() =>
+    this.result.error() ? false : this.result.isLoading()
+  );
 
   readonly categoryResult = httpResource<CategoryModel[]>(() => 'api/category');
 
