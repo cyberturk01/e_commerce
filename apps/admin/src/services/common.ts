@@ -1,13 +1,15 @@
 import { Injectable, signal } from '@angular/core';
 import { BreadcrumbModel } from '../pages/layouts/breadcrumb/breadcrumb';
-import { CategoryModel } from '../pages/category/category';
-import { ProductModel } from '../pages/products/products';
+import { CategoryModel } from '@shared/models/category.model';
+import { ProductModel } from '@shared/models/product.model';
+import { UserModel } from '@shared/models/user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Common {
   readonly data = signal<BreadcrumbModel[]>([]);
+  readonly user = signal<UserModel | undefined>(undefined);
   readonly dataOnNameChange = signal<CategoryModel | ProductModel | undefined>(
     undefined
   );

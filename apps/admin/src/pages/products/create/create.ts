@@ -16,10 +16,10 @@ import { FlexiGridModule } from 'flexi-grid';
 import { FlexiToastService } from 'flexi-toast';
 import { NgxMaskDirective } from 'ngx-mask';
 import { lastValueFrom } from 'rxjs';
-import { initialProduct, ProductModel } from '../products';
+import { initialProduct, ProductModel } from '@shared/models/product.model';
 import { Common } from 'apps/admin/src/services/common';
 import { FlexiSelectModule } from 'flexi-select';
-import { CategoryModel } from '../../category/category';
+import { CategoryModel } from '@shared/models/category.model';
 
 @Component({
   imports: [

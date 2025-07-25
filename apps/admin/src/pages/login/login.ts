@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FlexiToastService } from 'flexi-toast';
-import { UserModel } from '../users/users';
+import { UserModel } from '@shared/models/user.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -38,6 +38,10 @@ export default class Login {
               'Username or Password is not exist or wrong',
               'error'
             );
+            return;
+          } else if (!res[0].isAdmin) {
+            this.#toast.showToast('Error', 'User is not authorized', 'error');
+            return;
           } else {
             console.log(res[0]);
 
