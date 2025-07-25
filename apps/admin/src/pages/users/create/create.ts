@@ -16,6 +16,9 @@ import { initialUser, UserModel } from '../users';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Common } from 'apps/admin/src/services/common';
 import Blank from 'apps/admin/src/component/blank/blank';
+import Breadcrumb, {
+  BreadcrumbModel,
+} from '../../layouts/breadcrumb/breadcrumb';
 
 @Component({
   imports: [Blank, FormsModule],
@@ -34,13 +37,21 @@ export default class Create {
       var res = await lastValueFrom(
         this.#http.get<UserModel>('api/users/' + this.id())
       );
+      this.breadcrumb.update((prev) => [
+        ...prev,
+        { title: res.fullName, url: '/users/edit/' + this.id, icon: 'edit' },
+      ]);
       return res;
     },
   });
   readonly data = linkedSignal(() => this.result.value() ?? { ...initialUser });
-  readonly cardTitle = computed(() => (this.id() ? 'Edit User' : 'Add User'));
+  readonly title = computed(() => (this.id() ? 'Edit User' : 'Add User'));
   readonly cardIcon = computed(() => (this.id() ? 'edit' : 'add'));
   readonly btnName = computed(() => (this.id() ? 'Update' : 'Save'));
+
+  readonly breadcrumb = signal<BreadcrumbModel[]>([
+    { title: 'Users', url: '/users', icon: 'group' },
+  ]);
 
   readonly #activate = inject(ActivatedRoute);
   readonly #common = inject(Common);
@@ -49,6 +60,11 @@ export default class Create {
     this.#activate.params.subscribe((res) => {
       if (res['id']) {
         this.id.set(res['id']);
+      } else {
+        this.breadcrumb.update((prev) => [
+          ...prev,
+          { title: 'Add User', url: '/users/create', icon: 'add' },
+        ]);
       }
     });
   }

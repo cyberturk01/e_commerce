@@ -1,14 +1,10 @@
-<app-blank
-  pageTitle="Add Users"
-  [breadcrumbs]='[{title:"Users",url:"/users",icon:"group"},
-                {title:cardTitle(), url:"/users/create",icon:cardIcon()}]'
-/>
+<app-blank [pageTitle]="title()" [breadcrumbs]="breadcrumb()" />
 <div class="row">
   <div class="col-md-4 col-12">
     <div class="card">
       <div class="card-body">
         <div class="card-header">
-          <h4>{{cardTitle()}}</h4>
+          <h4>{{title()}}</h4>
         </div>
         <div class="card-body">
           <form
