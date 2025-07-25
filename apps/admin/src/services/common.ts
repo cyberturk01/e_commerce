@@ -1,8 +1,8 @@
 import { Injectable, signal } from '@angular/core';
 import { BreadcrumbModel } from '../pages/layouts/breadcrumb/breadcrumb';
-import { CategoryModel } from '../pages/category/category';
-import { ProductModel } from '../pages/products/products';
-import { UserModel } from '../pages/users/users';
+import { CategoryModel } from '@shared/models/category.model';
+import { ProductModel } from '@shared/models/product.model';
+import { UserModel } from '@shared/models/user.model';
 
 @Injectable({
   providedIn: 'root',

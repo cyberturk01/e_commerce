@@ -12,13 +12,11 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { FlexiToastService } from 'flexi-toast';
 import { lastValueFrom } from 'rxjs';
-import { initialUser, UserModel } from '../users';
+import { initialUser, UserModel } from '@shared/models/user.model';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Common } from 'apps/admin/src/services/common';
 import Blank from 'apps/admin/src/component/blank/blank';
-import Breadcrumb, {
-  BreadcrumbModel,
-} from '../../layouts/breadcrumb/breadcrumb';
+import { BreadcrumbModel } from '../../layouts/breadcrumb/breadcrumb';
 
 @Component({
   imports: [Blank, FormsModule],

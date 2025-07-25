@@ -13,10 +13,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import Blank from 'apps/admin/src/component/blank/blank';
 import { FlexiToastService } from 'flexi-toast';
 import { lastValueFrom } from 'rxjs';
-import { CategoryModel, initialCategory } from '../category';
+import { CategoryModel, initialCategory } from '@shared/models/category.model';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FlexiGridModule } from 'flexi-grid';
-import { NgxMaskDirective } from 'ngx-mask';
 import { Common } from 'apps/admin/src/services/common';
 
 @Component({

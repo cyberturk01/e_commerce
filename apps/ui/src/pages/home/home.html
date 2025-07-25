@@ -1,0 +1,28 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>En Yeni Teknoloji Ürünleri</h1>
+    <p>Kaliteli ve uygun fiyatlı teknoloji ürünleri için doğru adres</p>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section class="products">
+  <div class="container">
+    <h2 class="section-title">Products</h2>
+    <div class="products-grid">
+      @for (item of data(); track item.id) {
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img [src]="item.imageUrl" [alt]="item.name" />
+        <h3>{{item.name}}</h3>
+        <p class="price">
+          {{item.price | currency:'EUR' : 'symbol' : '4.2-2'}}
+        </p>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      }
+    </div>
+  </div>
+</section>

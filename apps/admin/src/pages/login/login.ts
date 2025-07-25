@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FlexiToastService } from 'flexi-toast';
-import { UserModel } from '../users/users';
+import { UserModel } from '@shared/models/user.model';
 import { Router } from '@angular/router';
 
 @Component({
