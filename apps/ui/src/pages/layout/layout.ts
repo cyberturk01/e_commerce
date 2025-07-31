@@ -13,7 +13,7 @@ import { httpResource } from '@angular/common/http';
 import { CategoryModel } from '@shared/models/category.model';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './layout.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

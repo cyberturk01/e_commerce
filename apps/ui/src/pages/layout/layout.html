@@ -1,12 +1,14 @@
 <!-- Navbar -->
 <nav class="navbar">
   <div class="nav-container">
-    <div class="nav-logo">
+    <div class="nav-logo" routerLink="/" style="cursor: pointer">
       <h2>TechStore</h2>
     </div>
     <ul class="nav-menu">
       @for(item of data(); track $index) {
-      <li><a href="#" class="nav-link">{{item.name}}</a></li>
+      <li>
+        <a [routerLink]="['/', item.id]" class="nav-link">{{item.name}}</a>
+      </li>
       }
     </ul>
     <div class="nav-icons">
