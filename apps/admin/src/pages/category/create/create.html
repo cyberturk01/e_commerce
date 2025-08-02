@@ -23,6 +23,17 @@
                 name="name"
               />
             </div>
+            <div class="form-group mt-2">
+              <label for="">Category url</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="data().url"
+                [ngModel]="_common.dataOnNameChange()?.name || ''"
+                (ngModelChange)="onInputChange($event)"
+                name="url"
+              />
+            </div>
             <div class="form-group mt-2 d-flex justify-content-end">
               <button type="submit" class="btn btn-primary">
                 {{btnName()}}

@@ -7,7 +7,8 @@
       "price": 1200,
       "stock": "2213",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "48b0",
@@ -16,7 +17,8 @@
       "price": 123421.09,
       "stock": "123",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "1e8c",
@@ -25,7 +27,8 @@
       "price": 132.23,
       "stock": "2132",
       "categoryId": "cbed",
-      "categoryName": "Car"
+      "categoryName": "Car",
+      "categoryUrl": "car"
     },
     {
       "id": "13e7",
@@ -34,7 +37,8 @@
       "price": 123,
       "stock": "12",
       "categoryId": "525c",
-      "categoryName": "Pen"
+      "categoryName": "Pen",
+      "categoryUrl": "pen"
     },
     {
       "id": "f812",
@@ -43,7 +47,8 @@
       "price": 1231231,
       "stock": "234",
       "categoryId": "525c",
-      "categoryName": "Pen"
+      "categoryName": "Pen",
+      "categoryUrl": "pen"
     },
     {
       "id": "12",
@@ -52,7 +57,8 @@
       "price": 1200,
       "stock": "2213",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "48b0",
@@ -61,7 +67,8 @@
       "price": 123421.09,
       "stock": "123",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "1e8c",
@@ -70,7 +77,8 @@
       "price": 132.23,
       "stock": "2132",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "13e7",
@@ -79,7 +87,8 @@
       "price": 123,
       "stock": "12",
       "categoryId": "525c",
-      "categoryName": "Pen"
+      "categoryName": "Pen",
+      "categoryUrl": "pen"
     },
     {
       "id": "f812",
@@ -88,7 +97,8 @@
       "price": 1231231,
       "stock": "234",
       "categoryId": "525c",
-      "categoryName": "Pen"
+      "categoryName": "Pen",
+      "categoryUrl": "pen"
     },
     {
       "id": "12",
@@ -97,7 +107,8 @@
       "price": 1200,
       "stock": "2213",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "48b0",
@@ -106,7 +117,8 @@
       "price": 123421.09,
       "stock": "123",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "1e8c",
@@ -115,7 +127,8 @@
       "price": 132.23,
       "stock": "2132",
       "categoryId": "cbed",
-      "categoryName": "Car"
+      "categoryName": "Car",
+      "categoryUrl": "car"
     },
     {
       "id": "13e7",
@@ -124,7 +137,8 @@
       "price": 123,
       "stock": "12",
       "categoryId": "525c",
-      "categoryName": "Pen"
+      "categoryName": "Pen",
+      "categoryUrl": "pen"
     },
     {
       "id": "f812",
@@ -133,7 +147,8 @@
       "price": 1231231,
       "stock": "234",
       "categoryId": "525c",
-      "categoryName": "Pen"
+      "categoryName": "Pen",
+      "categoryUrl": "pen"
     },
     {
       "id": "12",
@@ -142,7 +157,8 @@
       "price": 1200,
       "stock": "2213",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "48b0",
@@ -151,7 +167,8 @@
       "price": 123421.09,
       "stock": "123",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "1e8c",
@@ -160,7 +177,8 @@
       "price": 132.23,
       "stock": "2132",
       "categoryId": "3aee",
-      "categoryName": "Phone"
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
     },
     {
       "id": "13e7",
@@ -169,7 +187,8 @@
       "price": 123,
       "stock": "12",
       "categoryId": "525c",
-      "categoryName": "Pen"
+      "categoryName": "Pen",
+      "categoryUrl": "pen"
     },
     {
       "id": "f812",
@@ -178,21 +197,25 @@
       "price": 1231231,
       "stock": "234",
       "categoryId": "525c",
-      "categoryName": "Pen"
+      "categoryName": "Pen",
+      "categoryUrl": "pen"
     }
   ],
   "category": [
     {
       "id": "3aee",
-      "name": "Phone"
+      "name": "Phone",
+      "url": "phone"
     },
     {
       "id": "cbed",
-      "name": "Car"
+      "name": "Car",
+      "url": "car"
     },
     {
       "id": "525c",
-      "name": "Pen"
+      "name": "Pen",
+      "url": "pen"
     }
   ],
   "users": [

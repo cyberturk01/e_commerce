@@ -7,7 +7,9 @@
     <ul class="nav-menu">
       @for(item of data(); track $index) {
       <li>
-        <a [routerLink]="['/', item.id]" class="nav-link">{{item.name}}</a>
+        <a [routerLink]="['/products', item.url]" class="nav-link"
+          >{{item.name}}</a
+        >
       </li>
       }
     </ul>
