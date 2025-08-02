@@ -108,6 +108,7 @@ export default class Create {
     this.data.update((prev) => ({
       ...prev,
       categoryName: category?.name ?? '',
+      categoryUrl: category?.url ?? '',
     }));
   }
 }

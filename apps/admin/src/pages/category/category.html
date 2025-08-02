@@ -25,6 +25,11 @@
     title="Category Name"
     filterType="text"
   ></flexi-grid-column>
+  <flexi-grid-column
+    field="url"
+    title="Category Url"
+    filterType="text"
+  ></flexi-grid-column>
   <ng-template flexiGridColumnCommandTemplate let-item>
     <flexi-button
       routerLink="/category/edit/{{item.id}}"
