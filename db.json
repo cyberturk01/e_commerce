@@ -216,6 +216,21 @@
       "id": "525c",
       "name": "Pen",
       "url": "pen"
+    },
+    {
+      "id": "3aee",
+      "name": "Charger",
+      "url": "charger"
+    },
+    {
+      "id": "cbed",
+      "name": "Remote Control",
+      "url": "remote-control"
+    },
+    {
+      "id": "525c",
+      "name": "Glass",
+      "url": "glass"
     }
   ],
   "users": [
@@ -238,6 +253,16 @@
       "password": "123123",
       "isAdmin": false,
       "fullName": "Gökhan Yigit"
+    },
+    {
+      "id": "a021",
+      "firstName": "Orhan",
+      "lastName": "Yigit",
+      "userName": "orhan@orhan.com",
+      "email": "orhan@orhan.com",
+      "password": "123",
+      "isAdmin": false,
+      "fullName": "Orhan yigit"
     }
   ]
 }

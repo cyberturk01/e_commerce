@@ -7,7 +7,7 @@ import {
   signal,
   ViewEncapsulation,
 } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import Home from '../home/home';
 import { httpResource } from '@angular/common/http';
 import { CategoryModel } from '@shared/models/category.model';
@@ -21,4 +21,10 @@ import { CategoryModel } from '@shared/models/category.model';
 export default class Layout {
   readonly result = httpResource<CategoryModel[]>(() => 'api/category');
   readonly data = computed(() => this.result.value() ?? []);
+  readonly #router = inject(Router);
+
+  logout() {
+    localStorage.clear();
+    this.#router.navigateByUrl('/auth/login');
+  }
 }

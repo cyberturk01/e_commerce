@@ -16,7 +16,10 @@
     <div class="nav-icons">
       <i class="fas fa-search"></i>
       <i class="fas fa-shopping-cart"></i>
-      <i class="fas fa-user"></i>
+
+      <i class="fas fa-user" routerouterLink="/auth/login" title="Login"></i>
+
+      <i class="fas fa-sign-out" (click)="logout()" title="Logout"></i>
     </div>
   </div>
 </nav>

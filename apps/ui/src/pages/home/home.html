@@ -12,8 +12,17 @@
   <div class="container">
     <h2 class="section-title">Products</h2>
     <div class="products-grid">
-      @for (item of dataSignal(); track item.id) {
-
+      @if(loading()){ @for (item of countOfPlaceholder(); track $index) {
+      <!-- <div class="product-card placeholder-glow">
+        <div
+          class="placeholder"
+          style="width: 100%; height: 200px; margin-bottom: 20px"
+        ></div>
+        <h3 class="placeholder">iPhone 15 Pro</h3>
+        <p class="price placeholder">45.999 ₺</p>
+        <button class="add-to-cart placeholder">Sepete Ekle</button>
+      </div> -->
+      } }@else {@for (item of dataSignal(); track item.id) {
       <!-- Product 1 -->
       <div class="product-card">
         <img [src]="item.imageUrl" [alt]="item.name" />
@@ -31,6 +40,7 @@
         [infiniteScrollThrottle]="50"
         (scrolled)="onScroll()"
       ></div>
+      }
     </div>
   </div>
 </section>

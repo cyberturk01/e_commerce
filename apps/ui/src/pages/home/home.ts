@@ -25,6 +25,7 @@ import { count } from 'rxjs';
 })
 export default class Home {
   readonly categoryUrl = signal<string | undefined>(undefined);
+  readonly countOfPlaceholder = signal<number[]>([1, 2, 3]);
   readonly categoryUrlPrevios = this.computedPrevious(this.categoryUrl);
   readonly limit = signal<number>(6);
   readonly start = signal<number>(0);
