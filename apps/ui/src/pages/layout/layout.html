@@ -15,11 +15,17 @@
     </ul>
     <div class="nav-icons">
       <i class="fas fa-search"></i>
-      <i class="fas fa-shopping-cart"></i>
-
-      <i class="fas fa-user" routerouterLink="/auth/login" title="Login"></i>
-
+      <div style="position: relative">
+        <i class="fas fa-shopping-cart"></i>
+        @if(basketCount() > 0){
+        <div class="basket-count">{{basketCount()}}</div>
+        }
+      </div>
+      @if(user()){
       <i class="fas fa-sign-out" (click)="logout()" title="Logout"></i>
+      }@else {
+      <i class="fas fa-user" title="Login" [routerLink]="['auth/login']"></i>
+      }
     </div>
   </div>
 </nav>

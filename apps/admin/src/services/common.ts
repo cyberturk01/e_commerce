@@ -14,6 +14,13 @@ export class Common {
     undefined
   );
 
+  constructor() {
+    const response: string | null = localStorage.getItem('response');
+    if (response) {
+      this.user.set(JSON.parse(response));
+    }
+  }
+
   set(data: BreadcrumbModel[]) {
     const val: BreadcrumbModel = {
       title: 'Home',
@@ -28,10 +35,10 @@ export class Common {
       .toLowerCase()
       .replace(/\b\w/g, (char) => char.toUpperCase());
 
-    this.dataOnNameChange.set({
-      ...this.data(),
-      name: formatted,
-    });
+    // this.dataOnNameChange.set({
+    //   ...this.data(),
+    //   name: formatted,
+    // });
   }
 
   resetNameChange() {
