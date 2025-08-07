@@ -8,6 +8,7 @@ import {
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { UserModel } from '@shared/models/user.model';
+import { Common } from 'apps/ui/src/services/common';
 import { FlexiToastService } from 'flexi-toast';
 
 @Component({
@@ -20,6 +21,7 @@ export default class Login {
   readonly #http = inject(HttpClient);
   readonly toast = inject(FlexiToastService);
   readonly #router = inject(Router);
+  readonly #common = inject(Common);
   signIn(form: NgForm) {
     if (!form.valid) {
       return;
@@ -41,7 +43,9 @@ export default class Login {
           return;
         }
         const user = res[0];
-        localStorage.setItem('res', JSON.stringify(user));
+        localStorage.setItem('response', JSON.stringify(user));
+        this.#common.user.set(user);
+        this.#common.getBasketCount();
         this.#router.navigateByUrl('/');
       });
   }

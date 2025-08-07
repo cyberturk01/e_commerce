@@ -238,7 +238,7 @@
       "id": "95f9",
       "firstName": "Gökhan",
       "lastName": "Yigit",
-      "userName": "cyber",
+      "userName": "gok",
       "email": "yigitgokhan1@gmail.com",
       "password": "123",
       "isAdmin": true,
@@ -258,11 +258,109 @@
       "id": "a021",
       "firstName": "Orhan",
       "lastName": "Yigit",
-      "userName": "orhan@orhan.com",
+      "userName": "or",
       "email": "orhan@orhan.com",
-      "password": "123",
+      "password": "1234",
       "isAdmin": false,
       "fullName": "Orhan yigit"
+    }
+  ],
+  "baskets": [
+    {
+      "id": "6cb9",
+      "userId": "95f9",
+      "productId": "12",
+      "productName": "Iphone 17",
+      "price": 1200,
+      "quantity": 1
+    },
+    {
+      "id": "fbb8",
+      "userId": "95f9",
+      "productId": "48b0",
+      "productName": "Iphone",
+      "price": 123421.09,
+      "quantity": 1
+    },
+    {
+      "id": "bad7",
+      "userId": "95f9",
+      "productId": "f812",
+      "productName": "Kalem2",
+      "price": 1231231,
+      "quantity": 1
+    },
+    {
+      "id": "3645",
+      "userId": "95f9",
+      "productId": "12",
+      "productName": "Iphone 17",
+      "price": 1200,
+      "quantity": 1
+    },
+    {
+      "id": "8395",
+      "userId": "95f9",
+      "productId": "48b0",
+      "productName": "Iphone",
+      "price": 123421.09,
+      "quantity": 1
+    },
+    {
+      "id": "e6ed",
+      "userId": "95f9",
+      "productId": "48b0",
+      "productName": "Iphone",
+      "price": 123421.09,
+      "quantity": 1
+    },
+    {
+      "id": "5a76",
+      "userId": "95f9",
+      "productId": "48b0",
+      "productName": "Iphone",
+      "price": 123421.09,
+      "quantity": 1
+    },
+    {
+      "id": "6c1e",
+      "userId": "95f9",
+      "productId": "48b0",
+      "productName": "Iphone",
+      "price": 123421.09,
+      "quantity": 1
+    },
+    {
+      "id": "389b",
+      "userId": "95f9",
+      "productId": "48b0",
+      "productName": "Iphone",
+      "price": 123421.09,
+      "quantity": 1
+    },
+    {
+      "id": "8834",
+      "userId": "a021",
+      "productId": "48b0",
+      "productName": "Iphone",
+      "price": 123421.09,
+      "quantity": 1
+    },
+    {
+      "id": "bbf1",
+      "userId": "a021",
+      "productId": "1e8c",
+      "productName": "Baby Car Phone",
+      "price": 132.23,
+      "quantity": 1
+    },
+    {
+      "id": "1df8",
+      "userId": "a021",
+      "productId": "12",
+      "productName": "Iphone 17",
+      "price": 1200,
+      "quantity": 1
     }
   ]
 }

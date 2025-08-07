@@ -1,5 +1,6 @@
-import { httpResource } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { ProductModel } from '@shared/models/product.model';
+import { BasketModel } from '@shared/models/basket.model';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -14,11 +15,13 @@ import {
 } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { count } from 'rxjs';
+import { Common } from '../../services/common';
+import { FlexiToastService } from 'flexi-toast';
 
 @Component({
-  imports: [CurrencyPipe, InfiniteScrollDirective],
+  imports: [CurrencyPipe, InfiniteScrollDirective, RouterLink],
   templateUrl: './home.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -40,8 +43,11 @@ export default class Home {
   readonly data = computed(() => this.result.value() ?? []);
   readonly dataSignal = signal<ProductModel[]>([]);
   readonly loading = computed(() => this.result.isLoading());
-
+  readonly user = computed(() => this.#common.user());
+  readonly #http = inject(HttpClient);
+  readonly #toast = inject(FlexiToastService);
   readonly #activated = inject(ActivatedRoute);
+  readonly #common = inject(Common);
 
   constructor() {
     this.#activated.params.subscribe((res) => {
@@ -61,6 +67,9 @@ export default class Home {
   }
 
   onScroll() {
+    if (this.start() >= 0) {
+      return;
+    }
     this.limit.update((prev) => prev + 6);
     this.start.update((prev) => prev + 6);
   }
@@ -73,6 +82,24 @@ export default class Home {
       const result = previous;
       previous = current;
       return result;
+    });
+  }
+
+  addBasket(data: ProductModel) {
+    const basket: BasketModel = {
+      userId: this.#common.user()!.id!,
+      productId: data.id!,
+      productName: data.name,
+      price: data.price,
+      quantity: 1,
+    };
+    this.#http.post('api/baskets/', basket).subscribe(() => {
+      this.#toast.showToast(
+        'Successful',
+        'Product added successfully',
+        'success'
+      );
+      this.#common.basketCount.update((prev) => prev + 1);
     });
   }
 }
