@@ -92,6 +92,7 @@ export default class Home {
       productName: data.name,
       price: data.price,
       quantity: 1,
+      productimageUrl: data.imageUrl,
     };
     this.#http.post('api/baskets/', basket).subscribe(() => {
       this.#toast.showToast(

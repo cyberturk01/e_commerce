@@ -5,6 +5,7 @@ export interface BasketModel {
   productName: string;
   price: number;
   quantity: number;
+  productimageUrl: string;
 }
 export const initalBasket: BasketModel = {
   userId: '',
@@ -12,4 +13,5 @@ export const initalBasket: BasketModel = {
   productName: '',
   price: 0,
   quantity: 1,
+  productimageUrl: '',
 };

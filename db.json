@@ -4,11 +4,31 @@
       "id": "12",
       "imageUrl": "https://www.lite-magazin.de/wp-content/uploads/2025/06/250623.AppleiPhone.jpg",
       "name": "Iphone 17",
-      "price": 1200,
+      "price": 12100,
       "stock": "2213",
       "categoryId": "3aee",
       "categoryName": "Phone",
       "categoryUrl": "phone"
+    },
+    {
+      "id": "13",
+      "imageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FMT_WHH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1724041668836",
+      "name": "AirPods Pro",
+      "price": 12200,
+      "stock": "2113",
+      "categoryId": "3aee",
+      "categoryName": "Phone",
+      "categoryUrl": "phone"
+    },
+    {
+      "id": "14",
+      "imageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg",
+      "name": "MacBook Air",
+      "price": 12400,
+      "stock": "2113",
+      "categoryId": "3ae1",
+      "categoryName": "Computer",
+      "categoryUrl": "computer"
     },
     {
       "id": "48b0",
@@ -24,7 +44,7 @@
       "id": "1e8c",
       "name": "Baby Car Phone",
       "imageUrl": "https://cdn.akakce.com/z/baby-toys/baby-toys-samy-sirin-araba.jpg",
-      "price": 132.23,
+      "price": 13212,
       "stock": "2132",
       "categoryId": "cbed",
       "categoryName": "Car",
@@ -34,7 +54,7 @@
       "id": "13e7",
       "name": "Kalem",
       "imageUrl": "https://www.pngfind.com/pngs/m/80-809240_emoji-car-auto-automobile-vechicle-bus-red-redcar.png",
-      "price": 123,
+      "price": 12300,
       "stock": "12",
       "categoryId": "525c",
       "categoryName": "Pen",
@@ -44,7 +64,7 @@
       "id": "f812",
       "name": "Kalem2",
       "imageUrl": "https://cdnsta.avansas.com/mnresize/900/-/urun/94691/f-c-tukenmez-kalem-10lu-poset-zoom-1.jpg",
-      "price": 1231231,
+      "price": 123000,
       "stock": "234",
       "categoryId": "525c",
       "categoryName": "Pen",
@@ -54,7 +74,7 @@
       "id": "12",
       "imageUrl": "https://www.lite-magazin.de/wp-content/uploads/2025/06/250623.AppleiPhone.jpg",
       "name": "Iphone 17",
-      "price": 1200,
+      "price": 120012,
       "stock": "2213",
       "categoryId": "3aee",
       "categoryName": "Phone",
@@ -64,7 +84,7 @@
       "id": "48b0",
       "name": "Iphone",
       "imageUrl": "https://blogistic.net/wp-content/uploads/2023/06/Togg-T10X-rot.webp",
-      "price": 123421.09,
+      "price": 234223,
       "stock": "123",
       "categoryId": "3aee",
       "categoryName": "Phone",
@@ -74,7 +94,7 @@
       "id": "1e8c",
       "name": "Baby Car Phone",
       "imageUrl": "https://cdn.akakce.com/z/baby-toys/baby-toys-samy-sirin-araba.jpg",
-      "price": 132.23,
+      "price": 23423,
       "stock": "2132",
       "categoryId": "3aee",
       "categoryName": "Phone",
@@ -84,7 +104,7 @@
       "id": "13e7",
       "name": "Kalem",
       "imageUrl": "https://www.pngfind.com/pngs/m/80-809240_emoji-car-auto-automobile-vechicle-bus-red-redcar.png",
-      "price": 123,
+      "price": 642342,
       "stock": "12",
       "categoryId": "525c",
       "categoryName": "Pen",
@@ -94,7 +114,7 @@
       "id": "f812",
       "name": "Kalem2",
       "imageUrl": "https://cdnsta.avansas.com/mnresize/900/-/urun/94691/f-c-tukenmez-kalem-10lu-poset-zoom-1.jpg",
-      "price": 1231231,
+      "price": 182355,
       "stock": "234",
       "categoryId": "525c",
       "categoryName": "Pen",
@@ -104,7 +124,7 @@
       "id": "12",
       "imageUrl": "https://www.lite-magazin.de/wp-content/uploads/2025/06/250623.AppleiPhone.jpg",
       "name": "Iphone 17",
-      "price": 1200,
+      "price": 124323,
       "stock": "2213",
       "categoryId": "3aee",
       "categoryName": "Phone",
@@ -114,7 +134,7 @@
       "id": "48b0",
       "name": "Iphone",
       "imageUrl": "https://blogistic.net/wp-content/uploads/2023/06/Togg-T10X-rot.webp",
-      "price": 123421.09,
+      "price": 11222,
       "stock": "123",
       "categoryId": "3aee",
       "categoryName": "Phone",
@@ -124,7 +144,7 @@
       "id": "1e8c",
       "name": "Baby Car Phone",
       "imageUrl": "https://cdn.akakce.com/z/baby-toys/baby-toys-samy-sirin-araba.jpg",
-      "price": 132.23,
+      "price": 182324,
       "stock": "2132",
       "categoryId": "cbed",
       "categoryName": "Car",
@@ -134,7 +154,7 @@
       "id": "13e7",
       "name": "Kalem",
       "imageUrl": "https://www.pngfind.com/pngs/m/80-809240_emoji-car-auto-automobile-vechicle-bus-red-redcar.png",
-      "price": 123,
+      "price": 18232,
       "stock": "12",
       "categoryId": "525c",
       "categoryName": "Pen",
@@ -144,7 +164,7 @@
       "id": "f812",
       "name": "Kalem2",
       "imageUrl": "https://cdnsta.avansas.com/mnresize/900/-/urun/94691/f-c-tukenmez-kalem-10lu-poset-zoom-1.jpg",
-      "price": 1231231,
+      "price": 1823,
       "stock": "234",
       "categoryId": "525c",
       "categoryName": "Pen",
@@ -154,7 +174,7 @@
       "id": "12",
       "imageUrl": "https://www.lite-magazin.de/wp-content/uploads/2025/06/250623.AppleiPhone.jpg",
       "name": "Iphone 17",
-      "price": 1200,
+      "price": 1823,
       "stock": "2213",
       "categoryId": "3aee",
       "categoryName": "Phone",
@@ -206,6 +226,11 @@
       "id": "3aee",
       "name": "Phone",
       "url": "phone"
+    },
+    {
+      "id": "3ae1",
+      "name": "Computer",
+      "url": "computer"
     },
     {
       "id": "cbed",
@@ -267,100 +292,67 @@
   ],
   "baskets": [
     {
-      "id": "6cb9",
+      "id": "b6b7",
       "userId": "95f9",
-      "productId": "12",
-      "productName": "Iphone 17",
-      "price": 1200,
-      "quantity": 1
+      "productId": "13",
+      "productName": "AirPods Pro",
+      "price": 12200,
+      "quantity": 5,
+      "productimageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FMT_WHH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1724041668836"
     },
     {
-      "id": "fbb8",
+      "id": "66ce",
       "userId": "95f9",
-      "productId": "48b0",
-      "productName": "Iphone",
-      "price": 123421.09,
-      "quantity": 1
+      "productId": "14",
+      "productName": "MacBook Air",
+      "price": 12400,
+      "quantity": 1,
+      "productimageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg"
     },
     {
-      "id": "bad7",
-      "userId": "95f9",
+      "id": "236a",
+      "userId": "a021",
+      "productId": "13",
+      "productName": "AirPods Pro",
+      "price": 12200,
+      "quantity": 1,
+      "productimageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FMT_WHH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1724041668836"
+    },
+    {
+      "id": "8f87",
+      "userId": "a021",
+      "productId": "14",
+      "productName": "MacBook Air",
+      "price": 12400,
+      "quantity": 1,
+      "productimageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg"
+    },
+    {
+      "id": "ae5d",
+      "userId": "a021",
+      "productId": "14",
+      "productName": "MacBook Air",
+      "price": 12400,
+      "quantity": 1,
+      "productimageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg"
+    },
+    {
+      "id": "ddb9",
+      "userId": "a021",
       "productId": "f812",
       "productName": "Kalem2",
-      "price": 1231231,
-      "quantity": 1
+      "price": 123000,
+      "quantity": 1,
+      "productimageUrl": "https://cdnsta.avansas.com/mnresize/900/-/urun/94691/f-c-tukenmez-kalem-10lu-poset-zoom-1.jpg"
     },
     {
-      "id": "3645",
-      "userId": "95f9",
-      "productId": "12",
-      "productName": "Iphone 17",
-      "price": 1200,
-      "quantity": 1
-    },
-    {
-      "id": "8395",
-      "userId": "95f9",
-      "productId": "48b0",
-      "productName": "Iphone",
-      "price": 123421.09,
-      "quantity": 1
-    },
-    {
-      "id": "e6ed",
-      "userId": "95f9",
-      "productId": "48b0",
-      "productName": "Iphone",
-      "price": 123421.09,
-      "quantity": 1
-    },
-    {
-      "id": "5a76",
-      "userId": "95f9",
-      "productId": "48b0",
-      "productName": "Iphone",
-      "price": 123421.09,
-      "quantity": 1
-    },
-    {
-      "id": "6c1e",
-      "userId": "95f9",
-      "productId": "48b0",
-      "productName": "Iphone",
-      "price": 123421.09,
-      "quantity": 1
-    },
-    {
-      "id": "389b",
-      "userId": "95f9",
-      "productId": "48b0",
-      "productName": "Iphone",
-      "price": 123421.09,
-      "quantity": 1
-    },
-    {
-      "id": "8834",
+      "id": "57c2",
       "userId": "a021",
       "productId": "48b0",
       "productName": "Iphone",
       "price": 123421.09,
-      "quantity": 1
-    },
-    {
-      "id": "bbf1",
-      "userId": "a021",
-      "productId": "1e8c",
-      "productName": "Baby Car Phone",
-      "price": 132.23,
-      "quantity": 1
-    },
-    {
-      "id": "1df8",
-      "userId": "a021",
-      "productId": "12",
-      "productName": "Iphone 17",
-      "price": 1200,
-      "quantity": 1
+      "quantity": 1,
+      "productimageUrl": "https://blogistic.net/wp-content/uploads/2023/06/Togg-T10X-rot.webp"
     }
   ]
 }
