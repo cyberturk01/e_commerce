@@ -1,0 +1,104 @@
+<title>TechStore | My Basket</title>
+<section class="cart-section">
+  <div class="container">
+    <div class="cart-header">
+      <h1><i class="fas fa-shopping-cart"></i> My Basket</h1>
+    </div>
+    @if (data().length===0) {
+
+    <div style="margin-bottom: 20px">
+      <h1 style="width: 100%; text-align: center">
+        You dont have any item in the basket!
+      </h1>
+    </div>
+    }@else {
+    <p>
+      You have <span id="cart-count">{{data().length}}</span> item in your
+      basket
+    </p>
+
+    <div class="cart-content">
+      <!-- Cart Items -->
+      <div class="cart-items">
+        <!-- Item 1 -->
+        @for (item of data(); track $index) {
+
+        <div class="cart-item">
+          <img [src]="item.productimageUrl" [alt]="item.productName" />
+          <div class="item-details">
+            <h3>{{item.productName}}</h3>
+            <div class="item-actions">
+              <button class="remove-btn">
+                <i class="fas fa-trash"></i> Remove
+              </button>
+              <button class="save-btn">
+                <i class="fas fa-heart"></i> Add to Favorites
+              </button>
+            </div>
+          </div>
+          <div class="quantity-controls">
+            <button class="qty-btn minus" (click)="decrement(item)">-</button>
+            <span class="quantity">{{item.quantity}}</span>
+            <button class="qty-btn plus" (click)="increment(item)">+</button>
+          </div>
+          <div class="item-price">
+            <span class="price"
+              >{{item.price * item.quantity| currency: '€'}}</span
+            >
+          </div>
+        </div>
+        }
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <div class="summary-card">
+          <h3>Order Summary</h3>
+
+          <div class="summary-row">
+            <span>Sub Total:</span>
+            <span id="subtotal">{{total() | currency: '€'}}</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shippment:</span>
+            <span class="free">Free</span>
+          </div>
+
+          <div class="summary-row">
+            <span>TAX (18%):</span>
+            <span id="tax">{{tax() | currency: '€'}}</span>
+          </div>
+
+          <hr />
+
+          <div class="summary-row total">
+            <span>Total:</span>
+            <span id="total">{{total()+tax() |currency :'€'}}</span>
+          </div>
+
+          <div class="promo-code">
+            <input type="text" placeholder="Promosyon kodu girin" />
+            <button class="promo-btn">Uygula</button>
+          </div>
+
+          <button class="checkout-btn">
+            <i class="fas fa-lock"></i>
+            Güvenli Ödeme
+          </button>
+
+          <div class="payment-methods">
+            <p>Kabul edilen ödeme yöntemleri:</p>
+            <div class="payment-icons">
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-amex"></i>
+              <i class="fas fa-credit-card"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>

@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -19,7 +20,7 @@ import { Common } from '../../services/common';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class Layout {
+export default class Layout implements AfterViewInit {
   readonly result = httpResource<CategoryModel[]>(() => 'api/category');
   readonly data = computed(() => this.result.value() ?? []);
   readonly user = computed(() => this.#common.user());
@@ -32,5 +33,9 @@ export default class Layout {
     this.#common.user.set(undefined);
     this.#common.basketCount.set(0);
     this.#router.navigateByUrl('/auth/login');
+  }
+
+  ngAfterViewInit(): void {
+    this.#common.getBasketCount();
   }
 }
