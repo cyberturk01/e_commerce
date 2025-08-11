@@ -3113,3 +3113,7 @@ hr {
   color: white;
   padding: 0.75px;
 }
+
+.cursor {
+  cursor: pointer;
+}
