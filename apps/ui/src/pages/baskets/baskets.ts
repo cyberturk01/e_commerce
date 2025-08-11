@@ -10,9 +10,10 @@ import { HttpClient, httpResource } from '@angular/common/http';
 import { BasketModel } from '@shared/models/basket.model';
 import { CurrencyPipe } from '@angular/common';
 import { FlexiToastService } from 'flexi-toast';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RouterLink],
   templateUrl: './baskets.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
